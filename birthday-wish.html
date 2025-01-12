@@ -32,4 +32,82 @@
       border-radius: 8px;
     }
 
-    .te
+    .teams-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #0078d4;
+      text-decoration: none;
+    }
+
+    .teams-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Balloon styles */
+    .balloon {
+      position: absolute;
+      bottom: -50px;
+      animation: floatUp 10s infinite;
+      z-index: 100;
+    }
+
+    .balloon img {
+      width: 70px;
+      height: auto;
+      margin: 10px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-600px); /* Make the balloons fly up */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Happy Birthday message -->
+  <div class="birthday-heading">
+    Happy Birthday Gaurav!
+  </div>
+
+  <!-- Birthday message content -->
+  <div class="message-container">
+    <p>Today is all about celebrating you! May your day overflow with joy, laughter, and every little thing that brings a smile to your face. You deserve nothing but the very best success in everything you do, good health to enjoy life&rsquo;s journey, and countless unforgettable moments to cherish.</p>
+    <p>Here&rsquo;s to a fantastic year ahead, filled with exciting opportunities and memories that warm your heart. Make the most of your special day&mdash;you&rsquo;ve earned it!</p>
+  </div>
+
+  <!-- GIF section -->
+  <div class="gif">
+    <img src="https://i.pinimg.com/originals/d1/bd/ce/d1bdce0b886f50aff08461592f7c135b.gif" alt="Happy Birthday GIF" width="300" />
+  </div>
+
+  <!-- Teams link for wishing -->
+  <a href="https://teams.microsoft.com/l/chat/0/0?users=gchaudhari@qualys.com" class="teams-link" target="_blank">Wish Gaurav a Happy Birthday on Teams!</a>
+
+  <!-- Closing message -->
+  <p>- From Policy Compliance Team</p>
+
+  <!-- Balloon images -->
+  <div class="balloon" style="left: 10%; animation-delay: 0s;">
+    <img src="https://www.clker.com/cliparts/F/a/4/W/y/K/balloon-hi.png" alt="Balloon 1" />
+  </div>
+  <div class="balloon" style="left: 30%; animation-delay: 2s;">
+    <img src="https://www.clker.com/cliparts/F/a/4/W/y/K/balloon-hi.png" alt="Balloon 2" />
+  </div>
+  <div class="balloon" style="left: 50%; animation-delay: 4s;">
+    <img src="https://www.clker.com/cliparts/F/a/4/W/y/K/balloon-hi.png" alt="Balloon 3" />
+  </div>
+  <div class="balloon" style="left: 70%; animation-delay: 6s;">
+    <img src="https://www.clker.com/cliparts/F/a/4/W/y/K/balloon-hi.png" alt="Balloon 4" />
+  </div>
+  <div class="balloon" style="left: 90%; animation-delay: 8s;">
+    <img src="https://www.clker.com/cliparts/F/a/4/W/y/K/balloon-hi.png" alt="Balloon 5" />
+  </div>
+
+</body>
+</html>
