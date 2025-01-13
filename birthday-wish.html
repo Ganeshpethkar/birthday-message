@@ -6,196 +6,197 @@
 <title>Happy Birthday Gaurav!</title>
 <style>
     body {
-      font-family: 'Gabriola', cursive;
-      font-size: 31px;
-      color: #000000;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background: #f0f8ff; /* Light background */
-      overflow-y: scroll; /* Enable vertical scrolling */
-      position: relative;
-      width: 100%;
-      height: 100vh; /* Ensure full viewport height */
-    }
-
-    /* Countdown styling */
-    .countdown {
-      font-size: 200px; /* Larger font size for visibility */
-      color: #ff4081;
-      font-weight: bold;
-      position: fixed; /* Use fixed to center it within the viewport */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: block;
-    }
-
-    /* Happy Birthday heading */
-    .birthday-heading {
-      font-size: 60px;
-      color: #ff4081;
-      margin-top: 50px;
-      animation: bounceIn 2s infinite alternate;
-      padding: 0 20px;
-      display: none; /* Hidden initially */
-    }
-
-    /* Birthday message content */
-    .message-container {
-      background-color: #ffffff;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      margin: 20px;
-      max-width: 80%; /* Limit width */
-      width: 80%;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      display: none; /* Hidden initially */
-    }
-
-    .message-container p {
-      margin: 10px 0;
-    }
-
-    /* Teams link styling */
-    .teams-link {
-      display: inline-block;
-      margin-top: 20px;
-      font-size: 20px;
-      color: #0078d4;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-
-    .teams-link:hover {
-      background-color: #ff4081;
-      color: white;
+        font-family: 'Gabriola', cursive;
+        font-size: 31px;
+        color: #000000;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background: #f0f8ff;
+        overflow-y: scroll;
+        position: relative;
+        width: 100%;
+        height: 100vh;
     }
 
     /* Sparkle animation */
     .sparkle {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      background: url('https://www.transparenttextures.com/patterns/asfalt.png') repeat;
-      animation: sparkleEffect 3s infinite ease-in-out; /* Slower animation */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background: url('https://www.transparenttextures.com/patterns/asfalt.png') repeat;
+        animation: sparkleEffect 3s infinite ease-in-out;
     }
 
     @keyframes sparkleEffect {
-      0% {
-        opacity: 0;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.1);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(1);
-      }
+        0% { opacity: 0; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.1); }
+        100% { opacity: 0; transform: scale(1); }
+    }
+
+    /* Countdown styling */
+    .countdown {
+        font-size: 200px;
+        color: #ff4081;
+        font-weight: bold;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    /* Happy Birthday heading */
+    .birthday-heading {
+        font-size: 60px;
+        color: #ff4081;
+        margin-top: 50px;
+        animation: bounce 2s infinite alternate;
+        padding: 0 20px;
+        display: none;
+    }
+
+    @keyframes bounce {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-20px); }
+    }
+
+    /* Message styling */
+    .message {
+        font-size: 60px;
+        color: #ff4081;
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    /* Birthday message content */
+    .message-container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        max-width: 80%;
+        width: 80%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+    }
+
+    .message-container p {
+        margin: 10px 0;
+    }
+
+    /* Teams link styling */
+    .teams-link {
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #0078d4;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .teams-link:hover {
+        background-color: #ff4081;
+        color: white;
     }
 
     /* Responsive adjustments */
-    @media (max-width: 1024px) {
-      .birthday-heading {
-        font-size: 50px;
-      }
-
-      .message-container {
-        width: 90%;
-        padding: 30px;
-      }
-    }
-
     @media (max-width: 768px) {
-      .birthday-heading {
-        font-size: 40px;
-      }
+        .birthday-heading {
+            font-size: 50px;
+        }
 
-      .message-container {
-        width: 95%;
-        padding: 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .birthday-heading {
-        font-size: 30px;
-      }
-
-      .message-container {
-        width: 100%;
-        padding: 10px;
-      }
-
-      .teams-link {
-        font-size: 16px;
-        padding: 8px 15px;
-      }
+        .message-container {
+            width: 90%;
+            padding: 30px;
+        }
     }
 </style>
 </head>
 <body>
 
-  <!-- Sparkle background effect -->
+<!-- Sparkle background effect -->
 <div class="sparkle"></div>
 
-  <!-- Countdown element -->
+<!-- Messages -->
+<div id="message1" class="message">Get your thinking caps on! 🎩</div>
+<div id="message2" class="message">Alright, let's uncover the mystery! 🎉</div>
+
+<!-- Countdown element -->
 <div class="countdown" id="countdown">3</div>
 
-  <!-- Happy Birthday heading -->
+<!-- Happy Birthday heading -->
 <div class="birthday-heading" id="birthday-heading">
     Happy Birthday Gaurav!
 </div>
 
-  <!-- Birthday message content -->
+<!-- Birthday message content -->
 <div class="message-container" id="message-container">
-<p>Today is all about celebrating you! May your day overflow with joy, laughter, and every little thing that brings a smile to your face. You deserve nothing but the very best success in everything you do, good health to enjoy life&rsquo;s journey, and countless unforgettable moments to cherish.</p>
-<p>Here&rsquo;s to a fantastic year ahead, filled with exciting opportunities and memories that warm your heart. Make the most of your special day&mdash;you&rsquo;ve earned it!</p>
+    <p>Today is all about celebrating you! May your day overflow with joy, laughter, and every little thing that brings a smile to your face. You deserve nothing but the very best success in everything you do, good health to enjoy life&rsquo;s journey, and countless unforgettable moments to cherish.</p>
+    <p>Here&rsquo;s to a fantastic year ahead, filled with exciting opportunities and memories that warm your heart. Make the most of your special day&mdash;you&rsquo;ve earned it!</p>
 </div>
 
-  <!-- GIF section -->
-<div class="gif" id="gif" style="display: none;">
-<img src="https://i.pinimg.com/originals/d1/bd/ce/d1bdce0b886f50aff08461592f7c135b.gif" alt="Happy Birthday GIF" width="300" />
+<!-- GIF -->
+<div id="gif" style="display: none;">
+    <img src="https://i.pinimg.com/originals/d1/bd/ce/d1bdce0b886f50aff08461592f7c135b.gif" alt="Happy Birthday GIF" width="300" />
 </div>
 
-  <!-- Teams link for wishing -->
+<!-- Teams link for wishing -->
 <a href="https://teams.microsoft.com/l/chat/0/0?users=gchaudhari@qualys.com" class="teams-link" id="teams-link" target="_blank" style="display: none;">Wish Gaurav a Happy Birthday on Teams!</a>
 
-  <!-- Closing message -->
+<!-- Closing message -->
 <p id="closing-message" style="display: none;">- From Policy Compliance Team</p>
 
 <script>
-  // Countdown logic
-  let countdownElement = document.getElementById('countdown');
-  let birthdayHeading = document.getElementById('birthday-heading');
-  let messageContainer = document.getElementById('message-container');
-  let gif = document.getElementById('gif');
-  let teamsLink = document.getElementById('teams-link');
-  let closingMessage = document.getElementById('closing-message');
-  let count = 3;
+    // Elements
+    const message1 = document.getElementById('message1');
+    const message2 = document.getElementById('message2');
+    const countdownElement = document.getElementById('countdown');
+    const birthdayHeading = document.getElementById('birthday-heading');
+    const messageContainer = document.getElementById('message-container');
+    const gif = document.getElementById('gif');
+    const teamsLink = document.getElementById('teams-link');
+    const closingMessage = document.getElementById('closing-message');
 
-  let countdownInterval = setInterval(() => {
-    count--;
-    countdownElement.textContent = count;
-    if (count === 0) {
-      clearInterval(countdownInterval);
-      countdownElement.style.display = 'none'; // Hide countdown
-      birthdayHeading.style.display = 'block'; // Show "Happy Birthday" message
-      messageContainer.style.display = 'block'; // Show the birthday message
-      gif.style.display = 'block'; // Show GIF
-      teamsLink.style.display = 'inline-block'; // Show Teams link
-      closingMessage.style.display = 'block'; // Show closing message
-    }
-  }, 1000); // Countdown interval (1 second per count)
+    // Sequence logic
+    setTimeout(() => {
+        message1.style.display = 'block';
+    }, 1000); // Show the first message after 1 second
+
+    setTimeout(() => {
+        message1.style.display = 'none';
+        message2.style.display = 'block';
+    }, 4000); // Show the second message after 4 seconds
+
+    setTimeout(() => {
+        message2.style.display = 'none';
+        countdownElement.style.display = 'block';
+        let count = 3;
+        const countdownInterval = setInterval(() => {
+            count--;
+            countdownElement.textContent = count;
+            if (count === 0) {
+                clearInterval(countdownInterval);
+                countdownElement.style.display = 'none'; // Hide countdown
+                birthdayHeading.style.display = 'block'; // Show "Happy Birthday" message
+                messageContainer.style.display = 'block'; // Show the birthday message
+                gif.style.display = 'block'; // Show GIF
+                teamsLink.style.display = 'inline-block'; // Show Teams link
+                closingMessage.style.display = 'block'; // Show closing message
+            }
+        }, 1000);
+    }, 7000); // Start countdown after 7 seconds
 </script>
 
 </body>
