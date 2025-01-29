@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish</title>
+    <style>
+        body {
+            font-family: 'Gabriola', cursive;
+            font-size: 31px;
+            color: #000000;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #f0f8ff;
+            overflow-y: scroll;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background: url('https://www.transparenttextures.com/patterns/asfalt.png') repeat;
+            animation: sparkleEffect 3s infinite ease-in-out;
+        }
+
+        @keyframes sparkleEffect {
+            0% { opacity: 0; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+
+        .countdown {
+            font-size: 200px;
+            color: #ff4081;
+            font-weight: bold;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .birthday-heading {
+            font-size: 60px;
+            color: #ff4081;
+            margin-top: 50px;
+            animation: bounce 2s infinite alternate;
+            padding: 0 20px;
+            display: none;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        .message-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 80%;
+            text-align: center;
+            display: none;
+        }
+
+        .message-container p {
+            margin: 10px 0;
+        }
+
+        .teams-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #0078d4;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: rgba(0, 120, 212, 0.3);
+            border: 1px solid rgba(0, 120, 212, 0.5);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .teams-link:hover {
+            background-color: #ff4081;
+            color: white;
+        }
+
+        .name-prompt {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .name-prompt img { /* Style for the image */
+            max-width: 200px; /* Adjust as needed */
+            margin-bottom: 10px; /* Add some spacing */
+        }
+
+        .name-prompt input {
+            font-size: 24px;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .name-prompt button {
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff4081;
+            color: white;
+            cursor: pointer;
+        }
+
+        .name-prompt button:hover {
+            background-color: #e03572;
+        }
+
+        .funny-message {
+            font-size: 36px;
+            color: #ff4081;
+            font-weight: bold;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .birthday-heading {
+                font-size: 50px;
+            }
+
+            .message-container {
+                width: 90%;
+                padding: 30px;
+            }
+
+            .funny-message {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sparkle"></div>
+
+<div class="name-prompt" id="name-prompt">
+    <img src="https://ganeshpethkar.github.io/birthday-message/Adhip.png" alt="Adhip's Image">
+    <h1>What’s the name of today’s lucky superstar? 🌟</h1>
+    <input type="text" id="name-input" placeholder="Enter name here...">
+    <button id="submit-name">Submit</button>
+</div>
+
+<div class="funny-message" id="funny-message"></div>
+
+<div class="countdown" id="countdown">3</div>
+
+<div class="birthday-heading" id="birthday-heading">
+    Happy Birthday, Adhip! 🎉
+</div>
+
+<div class="message-container" id="message-container">
+    <p><strong>Adhip, today isn’t just any day—it’s the celebration of YOU, the incredible soul who lights up every room with your presence! 🎉</strong></p>
+    <p>Your kindness, strength, and unwavering spirit inspire everyone lucky enough to know you. You make every challenge seem like an opportunity and every moment brighter with your laughter. 🌟</p>
+
+    <p>As you step into another year of life, we wish for you moments of pure joy, unstoppable growth, and boundless success. May every dream you chase become a reality, and may your heart always be filled with love and peace. 💖</p>
+
+    <p>You have a way of making this world better just by being you, and today, we celebrate all the amazing things that make you <em>Adhip</em>. Your journey is just beginning, and we know it’s going to be a beautiful one. 🌱</p>
+
+    <p>So, here’s to today and every day—may it bring you everything you deserve and more. May this year be the most spectacular one yet, filled with laughter, adventure, and memories you’ll cherish forever. 🥂</p>
+
+    <p><strong>Happy Birthday, Adhip! Keep shining, keep inspiring, and never forget how much you are loved. 🌸</strong></p>
+</div>
+
+<div id="gif" style="display: none;">
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzE4cWNqbW9wdG91Z2RoZzd3Nzk4NnhpdnAwaWRsMXJiOXhneGpxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LzwcNOrbA3aYvXK6r7/giphy.gif" alt="Happy Birthday GIF" width="300" />
+</div>
+
+<a href="https://teams.microsoft.com/l/chat/0/0?users=adhpatil@qualys.com" class="teams-link" id="teams-link" target="_blank" style="display: none;">Wish on Teams!</a>
+
+<p id="closing-message" style="display: none;">- From the Policy Compliance Team</p>
+
+<audio id="birthday-audio" src="https://ganeshpethkar.github.io/birthday-message/Latest%20Birthday%20background%20music%202022.mp3" preload="auto"></audio>
+
+<script>
+    const namePrompt = document.getElementById('name-prompt');
+    const nameInput = document.getElementById('name-input');
+    const submitNameButton = document.getElementById('submit-name');
+    const funnyMessage = document.getElementById('funny-message');
+    const countdownElement = document.getElementById('countdown');
+    const birthdayHeading = document.getElementById('birthday-heading');
+    const messageContainer = document.getElementById('message-container');
+    const gif = document.getElementById('gif');
+    const teamsLink = document.getElementById('teams-link');
+    const closingMessage = document.getElementById('closing-message');
+    const audio = document.getElementById('birthday-audio');
+    const nameImage = namePrompt.querySelector('img'); // Get the image element
+
+    const correctName = 'Adhip';
+
+    window.onload = () => {
+        audio.play();
+    };
+
+    function displayContentAfterCorrect() {
+        funnyMessage.style.display = 'none';
+        birthdayHeading.style.display = 'block';
+        messageContainer.style.display = 'block';
+        gif.style.display = 'block';
+        teamsLink.style.display = 'inline-block';
+        closingMessage.style.display = 'block';
+        audio.play(); // Play the birthday audio
+    }
+
+    function startCountdownAndReveal() {
+        let count = 3;
+        countdownElement.style.display = 'block';
+        const countdownInterval = setInterval(() => {
+            countdownElement.textContent = count;
+            count--;
+            if (count < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.style.display = 'none';
+                funnyMessage.style.display = 'block';
+                funnyMessage.innerHTML = "Surprise! 🎉 It’s Adhip’s Birthday! 🥳";
+                setTimeout(() => {
+                    funnyMessage.style.display = 'none';
+                    displayContentAfterCorrect();
+                }, 2000);
+            }
+        }, 1000);
+    }
+
+    function handleNameSubmission() {
+        const enteredName = nameInput.value.trim().toLowerCase();
+        if (enteredName === correctName.toLowerCase()) {
+            namePrompt.style.display = 'none'; // Hide the prompt
+            nameImage.style.display = 'none'; // Hide the image
+            funnyMessage.style.display = 'block';
+            funnyMessage.innerHTML = "You’re absolutely right! 🎉 Nailed it!";
+            setTimeout(() => displayContentAfterCorrect(), 2000);
+        } else {
+            namePrompt.style.display = 'none'; // Hide the prompt
+            nameImage.style.display = 'none'; // Hide the image
+            funnyMessage.style.display = 'block';
+            funnyMessage.innerHTML = "No, it’s not! 😄<br><br> Let’s reveal the truth...";
+            setTimeout(() => {
+                funnyMessage.style.display = 'none';
+                startCountdownAndReveal();
+            }, 3000);
+        }
+    }
+
+    submitNameButton.addEventListener('click', handleNameSubmission);
+
+    nameInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            handleNameSubmission();
+        }
+    });
+</script>
+
+</body>
+</html>
