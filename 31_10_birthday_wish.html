@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wish</title>
+  <style>
+    body {
+      font-family: 'Gabriola', cursive;
+      font-size: 31px;
+      color: #000000;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: #f0f8ff;
+      overflow-y: scroll;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background: url('https://www.transparenttextures.com/patterns/asfalt.png') repeat;
+      animation: sparkleEffect 3s infinite ease-in-out;
+    }
+
+    @keyframes sparkleEffect {
+      0% { opacity: 0; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+
+    .countdown {
+      font-size: 200px;
+      color: #ff4081;
+      font-weight: bold;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+
+    .birthday-heading {
+      font-size: 60px;
+      color: #ff4081;
+      margin-top: 50px;
+      animation: bounce 2s infinite alternate;
+      padding: 0 20px;
+      display: none;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); }
+    }
+
+    .message-container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 80%;
+      text-align: center;
+      display: none;
+    }
+
+    .message-container p {
+      margin: 10px 0;
+    }
+
+    .teams-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #0078d4;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: rgba(0, 120, 212, 0.3);
+      border: 1px solid rgba(0, 120, 212, 0.5);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .teams-link:hover {
+      background-color: #ff4081;
+      color: white;
+    }
+
+    .name-prompt {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .name-prompt input {
+      font-size: 24px;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .name-prompt button {
+      font-size: 24px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff4081;
+      color: white;
+      cursor: pointer;
+    }
+
+    .name-prompt button:hover {
+      background-color: #e03572;
+    }
+
+    .funny-message {
+      font-size: 36px;
+      color: #ff4081;
+      font-weight: bold;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .birthday-heading {
+        font-size: 50px;
+      }
+
+      .message-container {
+        width: 90%;
+        padding: 30px;
+      }
+
+      .funny-message {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sparkle"></div>
+
+<div class="name-prompt" id="name-prompt">
+  <h1>What’s the name of today’s lucky superstar? 🌟</h1>
+  <input type="text" id="name-input" placeholder="Enter name here...">
+  <button id="submit-name">Submit</button>
+</div>
+
+<div class="funny-message" id="funny-message"></div>
+
+<div class="countdown" id="countdown">3</div>
+
+<div class="birthday-heading" id="birthday-heading">
+  Happy Birthday, Himali! 🎉
+</div>
+
+<div class="message-container" id="message-container">
+<p><strong>Happy Birthday, Himali! 🎉</strong></p>
+
+<p>Wishing a very Happy Birthday to <strong>Himali</strong> — the OCA Queen, the multitasking marvel, and the heart of every deployment done right! 👑💻🎉</p>
+
+<p>She single-handedly runs OCA like her own empire — every job, every trigger, every config — she knows it all inside out. 🧠⚙️✨</p>
+<p>When something goes wrong, others panic — but she stays calm, fixes it, and makes it look effortless. 💪😌</p>
+
+<p>If the office temperature dips a little, you’ll spot her in a sweater in no time! ❄️🧥</p>
+<p>Make it any colder, and boom — the AC is off! That’s the Himali thermostat in action. 😄🌡️</p>
+
+<p>Between meetings and releases, she’s always munching on something — dry fruits, fruits, or something healthy.</p>
+<p>Her desk could easily double up as a mini nutrition hub! 🥗🍎🥜</p>
+
+<p>Always ready to help, always with a smile — she’s the go-to person everyone counts on. 🤝💫</p>
+<p>Her calm presence, quick problem-solving, and kind heart make her truly one of a kind. 💖🌷</p>
+
+<p>Here’s to the one who keeps OCA running, keeps everyone smiling, and proves that strength can be silent yet unstoppable. 🚀🌸</p>
+<p>The one and only — <strong>OCA Wonder Woman</strong>. 👩‍💻🎂🎈</p>
+
+</div>
+
+<div id="gif" style="display: none;">
+  <img src="https://lovenamepix.com/images/full/send-happy-birthday-greetings-with-animated-gif-images-love-name-pix-786b.gif" alt="Happy Birthday GIF" width="300" />
+</div>
+
+<a href="https://teams.microsoft.com/l/chat/0/0?users=himshah@qualys.com" class="teams-link" id="teams-link" target="_blank" style="display: none;">Wish on Teams!</a>
+
+<p id="closing-message" style="display: none;">- From the Policy Audit Team</p>
+
+<audio id="birthday-audio" src="https://ganeshpethkar.github.io/birthday-message/Latest%20Birthday%20background%20music%202022.mp3" preload="auto"></audio>
+
+<script>
+  const namePrompt = document.getElementById('name-prompt');
+  const nameInput = document.getElementById('name-input');
+  const submitNameButton = document.getElementById('submit-name');
+  const funnyMessage = document.getElementById('funny-message');
+  const countdownElement = document.getElementById('countdown');
+  const birthdayHeading = document.getElementById('birthday-heading');
+  const messageContainer = document.getElementById('message-container');
+  const gif = document.getElementById('gif');
+  const teamsLink = document.getElementById('teams-link');
+  const closingMessage = document.getElementById('closing-message');
+  const audio = document.getElementById('birthday-audio');
+
+  const correctName = 'Himali';
+
+  window.onload = () => {
+    audio.play();
+  };
+
+  function displayContentAfterCorrect() {
+    funnyMessage.style.display = 'none';
+    birthdayHeading.style.display = 'block';
+    messageContainer.style.display = 'block';
+    gif.style.display = 'block';
+    teamsLink.style.display = 'inline-block';
+    closingMessage.style.display = 'block';
+    audio.play(); // Play the birthday audio
+  }
+
+  function startCountdownAndReveal() {
+    let count = 3;
+    countdownElement.style.display = 'block';
+    const countdownInterval = setInterval(() => {
+      countdownElement.textContent = count;
+      count--;
+      if (count < 0) {
+        clearInterval(countdownInterval);
+        countdownElement.style.display = 'none';
+        funnyMessage.style.display = 'block';
+        funnyMessage.innerHTML = "Surprise! 🎉 It’s Himali’s Birthday! 🥳";
+        setTimeout(() => {
+          funnyMessage.style.display = 'none';
+          displayContentAfterCorrect();
+        }, 2000);
+      }
+    }, 1000);
+  }
+
+  function handleNameSubmission() {
+    const enteredName = nameInput.value.trim().toLowerCase();
+    if (enteredName === correctName.toLowerCase()) {
+      namePrompt.style.display = 'none';
+      funnyMessage.style.display = 'block';
+      funnyMessage.innerHTML = "You’re absolutely right! 🎉 Nailed it!";
+      setTimeout(() => displayContentAfterCorrect(), 2000);
+    } else {
+      namePrompt.style.display = 'none';
+      funnyMessage.style.display = 'block';
+      funnyMessage.innerHTML = "No, it’s not! 😄<br><br> Let’s reveal the truth...";
+      setTimeout(() => {
+        funnyMessage.style.display = 'none';
+        startCountdownAndReveal();
+      }, 3000);
+    }
+  }
+
+  submitNameButton.addEventListener('click', handleNameSubmission);
+
+  nameInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      handleNameSubmission();
+    }
+  });
+</script>
+
+</body>
+</html>
